@@ -22,11 +22,11 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-<!--    <mvc:interceptors>-->
-<!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/**"/>-->
-<!--            <bean class="gq.dengbo.oa.global.LoginInterceptor"/>-->
-<!--        </mvc:interceptor>-->
-<!--    </mvc:interceptors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="gq.dengbo.oa.global.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 </beans>
