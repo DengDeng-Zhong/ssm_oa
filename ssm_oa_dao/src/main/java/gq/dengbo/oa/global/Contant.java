@@ -28,7 +28,9 @@ public class Contant {
         list.add("交通");
         list.add("餐饮");
         list.add("住宿");
+        list.add("采购");
         list.add("办公");
+        list.add("其他");
         return list;
     }
 

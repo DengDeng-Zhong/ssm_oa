@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -28,7 +29,9 @@
             <li class="dropdown menu-merge">
                 <a href="#" class="dropdown-toggle fw600 p15" data-toggle="dropdown">
                     <img src="/assets/img/avatars/5.jpg" alt="avatar" class="mw30 br64">
-                    <span class="hidden-xs pl15"> 刘备 </span>
+                    <c:if test="${sessionScope.employee!=null}">
+                        <span class="hidden-xs pl15">${sessionScope.employee.name}</span>
+                    </c:if>
                     <span class="caret caret-tp hidden-xs"></span>
                 </a>
                 <ul class="dropdown-menu list-group dropdown-persist w250" role="menu">
@@ -59,10 +62,20 @@
                             <img src="/assets/img/avatars/3.jpg" class="img-responsive">
                         </a>
                         <div class="media-body">
-                            <div class="media-author">刘备--总经理</div>
-                            <div class="media-links">
-                                <a href="/quit">退出</a>
-                            </div>
+                            <c:if test="${sessionScope.employee!=null}">
+                                <div class="media-author">${sessionScope.employee.name}</div>
+                                <div class="media-links">
+                                    <a href="/quit">退出</a>
+                                </div>
+                            </c:if>
+
+                            <c:if test="${sessionScope.employee == null}">
+                                <div class="media-author">非法闯入系统,请立刻退出</div>
+                                <div class="media-links">
+                                    <a href="/quit">退出</a>
+                                </div>
+                            </c:if>
+
                         </div>
                     </div>
                 </div>
